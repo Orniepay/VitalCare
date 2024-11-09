@@ -35,7 +35,7 @@ def turn_off():
                     .catch(error => console.error('Error:', error));
             }
 
-            window.onload = fetchArduinoData;
+            setInterval(fetchArduinoData, 2500);
         </script>
     ''')
 
