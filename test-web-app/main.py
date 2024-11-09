@@ -10,7 +10,6 @@ def index():
             <h1>arduino C LED Control</h1>
             <p><a href="/turn_on">Turn ON LED to red</a></p>
             <p><a href="/turn_off">Turn LED to green</a></p>
-            <div id="arduino-data">Waiting for Arduino data...</div>
             <script>
                 function fetchArduinoData() {
                     fetch('/get_data')
@@ -34,7 +33,13 @@ def turn_off():
     #arduino.write(b'b')  # Send '0' to arduino C to turn off the LED
     #while arduino.in_waiting > 0:
         # Read the whole line
-    line = arduino.readline().decode('utf-8').strip()  # Reads until newline
-    print("Received:", line)
     #line = arduino.readline().decode('utf-8').rstrip()
-    return jsonify(f"<p>{line} <a href='/'>Go back</a></p>")
+    return f"<p>{line} <a href='/'>Go back</a></p>"
+
+@app.route('/get_data')
+def get_data():
+    if arduino.in_waiting > 0:
+        line = arduino.readline().decode('utf-8').strip()
+    else:
+        line = "No new data"
+    return jsonify(message=line)
