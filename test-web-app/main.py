@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template_string
 import serial
 
 app = Flask(__name__)
@@ -6,7 +6,7 @@ arduino = serial.Serial("COM6", 9600)
 
 @app.route('/')
 def index():
-    return '''
+    return render_template_string('''
             <h1>arduino C LED Control</h1>
             <p><a href="/turn_on">Turn ON LED to red</a></p>
             <p><a href="/turn_off">Turn LED to green</a></p>
@@ -21,7 +21,7 @@ def index():
                 }
                 setInterval(fetchArduinoData, 1000);
             </script>
-        '''
+        ''')
 
 @app.route('/turn_on')
 def turn_on():
@@ -34,12 +34,10 @@ def turn_off():
     #while arduino.in_waiting > 0:
         # Read the whole line
     #line = arduino.readline().decode('utf-8').rstrip()
-    return "<p>LED turned OFF to green. <a href='/'>Go back</a></p>"
-
-@app.route('/get_data')
-def get_data():
     if arduino.in_waiting > 0:
+        # Read a line from the Arduino serial
         line = arduino.readline().decode('utf-8').strip()
+        print("BPM:", line)
     else:
-        line = "No new data"
-    return jsonify(message=line)
+        line = "No data available from Arduino."
+    return f"{line}"
