@@ -34,7 +34,7 @@ def turn_off():
     #while arduino.in_waiting > 0:
         # Read the whole line
     #line = arduino.readline().decode('utf-8').rstrip()
-    return f"<p>{line} <a href='/'>Go back</a></p>"
+    return "<p>LED turned OFF to green. <a href='/'>Go back</a></p>"
 
 @app.route('/get_data')
 def get_data():
