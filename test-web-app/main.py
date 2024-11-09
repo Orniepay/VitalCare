@@ -28,12 +28,23 @@ def turn_on():
     #arduino.write(b'a')  # Send '1' to arduino C to turn on the LED
     return "<p>LED turned ON to red. <a href='/'>Go back</a></p>"
 
-@app.route('/turn_off')
-def turn_off():
+#@app.route('/turn_off')
+#def turn_off():
     #arduino.write(b'b')  # Send '0' to arduino C to turn off the LED
     #while arduino.in_waiting > 0:
         # Read the whole line
     #line = arduino.readline().decode('utf-8').rstrip()
+#    line = arduino.readline().decode('utf-8').strip()
+#    print("BPM:", line)
+#    return f"{line}"
+
+@app.route('/turn_off')
+def turn_off():
+    #arduino.write(b'b')  # Send '0' to arduino C to turn off the LED
+    return "<p>LED turned OFF to green. <a href='/'>Go back</a></p>"
+
+@app.route('/get_data')
+def get_data():
     line = arduino.readline().decode('utf-8').strip()
     print("BPM:", line)
-    return f"{line}"
+    return jsonify(message=line)
