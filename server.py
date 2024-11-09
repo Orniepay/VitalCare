@@ -44,11 +44,20 @@ def login():
             if bcrypt.checkpw(password.encode('utf-8'), stored_hashed_password):
                 response = make_response(redirect(url_for('index')))
                 token = secrets.token_hex(20)
-                hashed_token = hashlib.sha256(token.encode('utf-8')).hexdigest()
+                hashed_token = hashlib.sha256(token.encode()).hexdigest()
                 users_collection.update_one({'name': first_name + ' ' + last_name }, {"$set": {"auth_token": hashed_token}})
                 response.set_cookie("auth_token", token, max_age=3600, httponly=True)
                 return response
     return render_template("html/login.html", title = "Login") 
+
+@app.route('/logout')
+def logout():
+    auth_token = request.cookies.get('auth_token')
+    if auth_token:
+        users_collection.update_one({"auth_token": auth_token}, {"$unset": "auth_token"})
+    response = make_response(redirect(url_for('index')))
+    response.set_cookie('auth_token', '', expires=0)
+    return response
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080, debug=True)
