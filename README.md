@@ -1,1 +1,1 @@
-# Hackathon-Fall24
+# UB Hackathon Fall'24
