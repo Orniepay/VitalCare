@@ -34,10 +34,6 @@ def turn_off():
     #while arduino.in_waiting > 0:
         # Read the whole line
     #line = arduino.readline().decode('utf-8').rstrip()
-    if arduino.in_waiting > 0:
-        # Read a line from the Arduino serial
-        line = arduino.readline().decode('utf-8').strip()
-        print("BPM:", line)
-    else:
-        line = "No data available from Arduino."
+    line = arduino.readline().decode('utf-8').strip()
+    print("BPM:", line)
     return f"{line}"
