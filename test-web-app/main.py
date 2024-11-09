@@ -23,7 +23,7 @@ def turn_off():
     return render_template_string('''
         <h1>LED turned OFF to green</h1>
         <p><a href="/">Go back</a></p>
-        <p>Arduino Data: <span id="arduino-data">Waiting for data...</span></p>
+        <p><span id="arduino-data">Waiting for data...</span></p>
 
         <script>
             function fetchArduinoData() {
