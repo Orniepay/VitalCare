@@ -1,11 +1,39 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="templates/assets/heart-rate.png"/>
+    <title>VitalsCare: Remote Patient Monitoring System</title>
+    
+    <!-- Link to the main CSS file -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    
+</head>
 
-{% block title %}VitalsCare: Remote Patient Monitoring System{% endblock %}
+<!-- This is where we start coding the layout of the website -->
+<body>
+    <!-- Link to the header-specific CSS file -->
+    <link rel="stylesheet" href="/static/css/header.css">
+    <header>
+        <nav class="header__nav">
+            <div class="header__logo">
+                <h4 data-aos="fade-down">VitalsCare</h4>
+                <div class="header__logo-overlay"></div>
+            </div>
 
-{% block content %}
-
-        <div class="container text-center py-5">
-            <h5 class="text-primary">VitalsCare: Remote Patient Monitoring System</h5>
-        </div>
-
-{% endblock %}
+            <ul class="header__menu" data-aos="fade-down">
+                <li>
+                    <a href="#login">Log In</a>
+                </li>
+                <li>
+                    <a href="#food">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#about-us">About Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
