@@ -19,7 +19,7 @@ def index():
                         })
                         .catch(error => console.error('Error:', error));
                 }
-                setInterval(fetchArduinoData, 1000);
+                setInterval(fetchArduinoData, 2500);
             </script>
         ''')
 
