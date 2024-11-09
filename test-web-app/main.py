@@ -36,7 +36,6 @@ def turn_off():
             }
 
             window.onload = fetchArduinoData;
-            setInterval(fetchArduinoData, 2500);
         </script>
     ''')
 
