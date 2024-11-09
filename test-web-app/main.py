@@ -12,7 +12,7 @@ def index():
             <p><a href="/turn_off">Turn LED to green</a></p>
             <script>
                 function fetchArduinoData() {
-                    fetch('/get_data')
+                    fetch('/turn_off')
                         .then(response => response.json())
                         .then(data => {
                             document.getElementById('arduino-data').innerText = data.message;
