@@ -6,9 +6,23 @@ arduino = serial.Serial("COM6", 9600)
 
 @app.route('/')
 def index():
-    return '''<h1>arduino C LED Control</h1>
-              <p><a href="/turn_on">Turn ON LED to red</a></p>
-              <p><a href="/turn_off">Turn LED to green</a></p>'''
+    return '''
+            <h1>arduino C LED Control</h1>
+            <p><a href="/turn_on">Turn ON LED to red</a></p>
+            <p><a href="/turn_off">Turn LED to green</a></p>
+            <div id="arduino-data">Waiting for Arduino data...</div>
+            <script>
+                function fetchArduinoData() {
+                    fetch('/get_data')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('arduino-data').innerText = data.message;
+                        })
+                        .catch(error => console.error('Error:', error));
+                }
+                setInterval(fetchArduinoData, 1000);
+            </script>
+        '''
 
 @app.route('/turn_on')
 def turn_on():
