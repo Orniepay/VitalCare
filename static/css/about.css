@@ -22,42 +22,28 @@
     background-size: contain;
  }
 
- .about-us__image-slide3{
-   
-}
-
 .about-us__image-slide2{
    border-bottom: 8px solid var(--color-creamson);
- }
- .about-us__image-sushi3 img{
-    width: 225px;
-    height: 225px;
- }
- 
- .about-us__image-sushi2 img{
-    width: 240px;
-    height: 160px;
- }
- .about-us__button{
-    position: absolute;
-    right: 0;
-    padding: 12px 32px;
-    min-height: 64px;
-    background: var(--secondary-color);
-    border-radius: 32px 0 0 32px;
-    border: 0;
-    outline: 0;
-    color: #fff;
-    font-family: var(--plus-jarkarta-sans);
-    font-weight: 500px;
-    font-size: 18px;
-    line-height: 23px;
-    cursor: pointer;
- }
- .about-us__button img {
-    object-fit: contain;
-    margin-left: 32px;
-  }
+}
+
+.about-us__image-slide2,
+.about-us__image-slide3 {
+  width: 600px; 
+  height: 600px; 
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+.mySlides1 img, .mySlides2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
   .about-us__content {
     padding: 64px;
   

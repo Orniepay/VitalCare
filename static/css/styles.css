@@ -3,11 +3,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
-@import url("sections/header.css");
-@import url("sections/intro.css");
+@import url("static/css/header.css");
+@import url("static/css/intro.css");
+@import url("static/css/login.css");
+@import url("static/css/register.css");
+@import url("static/css/popular.css");
+@import url("static/css/equipment.css");
+@import url("static/css/about.css");
 
-@import url("sections/login.css");
-@import url("sections/register.css");
 
 :root {
   --playfair-display: "Playfair Display", serif;

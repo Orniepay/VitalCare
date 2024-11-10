@@ -105,7 +105,7 @@
                   <a href="#equipment">Equipment</a>
               </li>
               <li>
-                  <a href="#dashboard">Dashboard</a>
+                  <a href="#readings">Readings</a>
               </li>
               <li>
                   <a href="#about-us">About Us</a>
@@ -268,51 +268,121 @@
       <link rel="stylesheet" href="/static/css/about.css">
       <div class="about-us__image">
           <div class="about-us__image-slide2">
-              <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="/static/images/breathalyzer-device.png" style="width:100%">
+              <div class="mySlides1 fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="/static/images/showcase-0.jpg" style="width:100%">
               </div>
               
-              <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="/static/images/temperature.png" style="width:100%">
+              <div class="mySlides1 fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="/static/images/showcase-1.jpg" style="width:100%">
               </div>
               
-              <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="/static/images/heart-rate.png" style="width:100%">
+              <div class="mySlides1 fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="/static/images/showcase-2.jpg" style="width:100%">
+              </div>
+
+              <div class="mySlides1 fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="/static/images/showcase-3.jpg" style="width:100%">
               </div>
           </div>
+          
+          <div class="about-us__image-slide3">
+            <div class="mySlides2 fade">
+              <div class="numbertext">1 / 4</div>
+              <img src="/static/images/showcase-4.jpg" style="width:100%">
+            </div>
             
-          <script>
-            let slideIndex = 0;
-            showSlides();
+            <div class="mySlides2 fade">
+              <div class="numbertext">2 / 4</div>
+              <img src="/static/images/showcase-5.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides2 fade">
+              <div class="numbertext">3 / 4</div>
+              <img src="/static/images/showcase-6.jpg" style="width:100%">
+            </div>
 
-            function showSlides() {
+            <div class="mySlides2 fade">
+              <div class="numbertext">4 / 4</div>
+              <img src="/static/images/showcase-7.jpg" style="width:100%">
+            </div>
+          </div>
+
+          <script>
+            let slideIndex1 = 0;
+            let slideIndex2 = 0;
+            showSlides1();
+            showSlides2();
+      
+            function showSlides1() {
               let i;
-              let slides = document.getElementsByClassName("mySlides");
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+              let slides1 = document.getElementsByClassName("mySlides1");
+              for (i = 0; i < slides1.length; i++) {
+                slides1[i].style.display = "none";  
               }
-              slideIndex++;
-              if (slideIndex > slides.length) {slideIndex = 1}    
-              slides[slideIndex-1].style.display = "block";  
-              setTimeout(showSlides, 3000); // Change image every 2 seconds
+              slideIndex1++;
+              if (slideIndex1 > slides1.length) {slideIndex1 = 1}    
+              slides1[slideIndex1-1].style.display = "block";  
+              setTimeout(showSlides1, 3000); // Change image every 3 seconds
+            }
+      
+            function showSlides2() {
+              let i;
+              let slides2 = document.getElementsByClassName("mySlides2");
+              for (i = 0; i < slides2.length; i++) {
+                slides2[i].style.display = "none";  
+              }
+              slideIndex2++;
+              if (slideIndex2 > slides2.length) {slideIndex2 = 1}    
+              slides2[slideIndex2-1].style.display = "block";  
+              setTimeout(showSlides2, 3000); // Change image every 3 seconds
             }
           </script>
 
-        <div class="about-us__image-slide3">
-        </div>
       </div>
        
       <div class="about-us__content" data-aos="fade-left">
-        <p class="sushi__subtitle">About us / 私たちに関しては</p>
-        <h3 class="sushi__title"> Our mission is to bring Japanese flavor to you.</h3>
-        <p class="sushi__description">We will continue to provide the experience of Omotenashi, 
-          the Japanese mindset of hospitality, with our shopping and dining for our customers.
+        <p class="equip__subtitle">About Us</p>
+        <h3 class="equip__title"> Our objective is to monitor and report your health.</h3>
+        <p class="equip__description"> We bring out the best of us to reach a common goal, and that is bringing people together with the power of medical technology.
         </p>
       </div>
     </section>
+
+    <footer class="footer flex-between">
+      <link rel="stylesheet" href="/static/css/footer.css">
+      <h3 class="footer__logo">
+        <span>Vitals</span>care
+      </h3>
+  
+      <ul class="footer__nav">
+        <li>
+            <a href="#equipment">Equipment</a>
+        </li>
+        <li>
+            <a href="#readings">Readings</a>
+        </li>
+        <li>
+            <a href="#about-us">About Us</a>
+        </li>
+      </ul>
+  
+      <ul class="footer__social">
+        <li class="flex-center">
+          <img src="/static/images/facebook.svg" alt="facebook"/>
+        </li>
+  
+        <li class="flex-center">
+          <img src="/static/images/instagram.svg" alt="instagram"/>
+        </li>
+  
+        <li class="flex-center">
+          <img src="/static/images/twitter.svg" alt="twitter"/>
+        </li>
+    </footer>  
 
     <script>
         AOS.init({
