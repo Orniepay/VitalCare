@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, make_response # type: ignore
 from flask import render_template  # type: ignore
-from flask import request # type : ignore
+from flask import request # type: ignore
 from flask_bcrypt import Bcrypt # type: ignore
 from pymongo import MongoClient # type: ignore
 import secrets
