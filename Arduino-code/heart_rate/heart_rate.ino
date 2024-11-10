@@ -1,14 +1,20 @@
+int pwmPin = 2; // PWM-capable pin for output
+float minTemp = 0.0;   // Minimum temperature range of the sensor
+float maxTemp = 100.0; // Maximum temperature range of the sensor
+
 void setup() {
-  Serial.begin(9600); // sets the serial port to 9600
-	Serial.println("MQ3 warming up!");
+  Serial.begin(9600);
+  pinMode(pwmPin, INPUT);
+	//Serial.println("MQ3 warming up!");
 	//delay(20000); // allow the MQ3 to warm up
 }
 
 void loop()
 {
-  int sensorValue = analogRead(A0); // read analog input pin 0
-  calculate_BPM(sensorValue);
-  calculate_BAC(sensorValue);
+  int sensor_value = analogRead(A0); // read analog input pin 0
+  calculate_BPM(sensor_value);
+  calculate_BAC(sensor_value);
+  calculate_temperature(sensor_value);
   delay(2500);
 }
 
@@ -27,19 +33,34 @@ void calculate_BPM(int sensor_value)
 
 void calculate_BAC(int sensor_value)
 {
-  if(sensorValue < 120) Serial.println("BAC: 0.000%");
-  else if(sensorValue > 120 && sensorValue < 400)
+  if(sensor_value < 120) Serial.println("BAC: 0.000%");
+  else if(sensor_value > 120 && sensor_value < 400)
   {
-    float BAC = ((sensorValue - 120) / 280) * 0.08;
+    float BAC = ((sensor_value - 120) / 280) * 0.08;
     Serial.print("BAC: ");
     Serial.print(BAC, 3);
     Serial.println("%");
   }
   else
   {
-    float BAC = 0.08 + (sensorValue - 400) * 0.0001;
+    float BAC = 0.08 + (sensor_value - 400) * 0.0001;
     Serial.print("BAC: ");
     Serial.print(BAC, 3);
     Serial.println("%");
   }
+}
+
+void calculate_temperature(int temperature)
+{
+  Serial.print("Value: ");
+  Serial.println(temperature);
+  
+  // if (temperature < minTemp) temperature = minTemp;
+  // if (temperature > maxTemp) temperature = maxTemp;
+
+  // // Map the temperature to PWM value (0-255)
+  // int pwm_value = map(temperature, minTemp, maxTemp, 0, 255);
+
+  // Serial.print("PWM Value: ");
+  // Serial.println(pwm_value);
 }
