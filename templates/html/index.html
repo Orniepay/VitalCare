@@ -38,7 +38,7 @@
         </nav>
     </header>
 
-    <section class="intro" data-aos="fade-up" data-aos-delay="800">
+    <section class="intro" data-aos="slide-up" data-aos-delay="800">
         <link rel="stylesheet" href="/static/css/intro.css">
         
         <div class="intro-image" data-aos="zoom-in" data-aos-delay="800">
@@ -47,7 +47,7 @@
             <div class="intro-image__overlay"></div>
         </div>
     
-        <div class="intro-content" data-aos="fade-right" data-aos-delay="800">
+        <div class="intro-content" data-aos="slide-right" data-aos-delay="800">
           <div class="intro-content-info" data-aos="fade-up" data-aos-delay="800">
             <h1>Concerned about your health? Let us help you with that!</h1>
             <p>Test your heartbeat, temperature, and alcohol level at our website to get the quickest and most accurate result.</p>
@@ -73,7 +73,8 @@
         <!-- Equipment Section -->
         <section class="heartbeat-equipment">
           <div class = "equipment__content"
-          data-aos="fade-right">
+          data-aos="slide-right"
+          data-aos-delay="500">
             <p class="equip__subtitle">Equipments</p>
             <h3 class = "equip__title"> Heartbeat Sensor</h3>
             <p class="equip__description">Check your heartbeat at the tip of your finger</p>
@@ -111,7 +112,8 @@
           <div class="equipment_image
           flex-center">
             <img src="/static/images/heart-beat.png" alt="heartbeat-1"
-            data-aos="fade-left"/>
+            data-aos="slide-left"
+            data-aos-delay="500"/>
             
             <div class="equipment__arrow
             equipment__arrow-left">
@@ -131,7 +133,8 @@
           <div class="equipment_image
           flex-center">
             <img src="/static/images/temperature.png" alt="thermostat"
-            data-aos="fade-right"/>
+            data-aos="slide-right"
+            data-aos-delay="500"/>
             
             <div class="equipment__arrow
             equipment__arrow-top">
@@ -147,7 +150,8 @@
           </div>
     
           <div class = "equipment__content"
-          data-aos="fade-left">
+          data-aos="slide-left"
+          data-aos-delay="500">
             <h3 class = "equip__title"> Thermostat </h3>
             <p class="equip__description">Check your tempatures with our in-build thermostat</p>
       
@@ -184,7 +188,8 @@
 
         <section class="breathalyzer-equipment">
             <div class = "equipment__content"
-            data-aos="fade-right">
+            data-aos="slide-right"
+            data-aos-delay="500">
               <h3 class = "equip__title"> Breathalyzer</h3>
               <p class="equip__description">Check your alcohol level to see if you're drunk or not</p>
         
@@ -221,7 +226,8 @@
             <div class="equipment_image
             flex-center">
               <img src="/static/images/breathalyzer-device.png" alt="heartbeat-1"
-              data-aos="fade-left"/>
+              data-aos="slide-left"
+              data-aos-delay="500"/>
               
               <div class="equipment__arrow
               equipment__arrow-left">
@@ -238,6 +244,12 @@
         </section>
     </section>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            easing: 'ease', // Animation easing function
+            once: true, // Only animate once
+        });
+    </script>
 </body>
 </html>
