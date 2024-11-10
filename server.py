@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, make_response # type: ignore
 from flask import render_template  # type: ignore
-from flask import request # type : ignore
+from flask import request # type: ignore
 from flask_bcrypt import Bcrypt # type: ignore
 from pymongo import MongoClient # type: ignore
 import secrets
@@ -63,6 +63,7 @@ def login():
                 users_collection.update_one({'email': email}, {"$set": {"auth_token": hashed_token}})
                 response.set_cookie("auth_token", token, max_age=3600, httponly=True)
                 return response
+        return render_template("html/login.html", error=True)
     return render_template("html/login.html", title = "Login") 
 
 @app.route('/logout')

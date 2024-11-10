@@ -11,6 +11,9 @@
     <section class="register-section">
         <h2>Register - VitalsCare</h2>
         <form action="/register" method="POST">
+            {% if error %}
+            <p style="color:red;">Passwords do not match!</p>
+            {% endif %}
             {%if exists %}
             <p style ="color:red;">You have already registered with this email, please login.</p>
             {% endif %}
