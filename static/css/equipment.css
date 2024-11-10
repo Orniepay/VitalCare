@@ -1,0 +1,150 @@
+.equipment {
+    position: relative;
+  
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+  
+.equipment__discover {
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    z-index: 1;
+  
+    width: 160px;
+    height: 160px;
+  
+    border-radius: 100%;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.equipment__discover p {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--plus-jakarta-sans);
+  
+    text-transform: uppercase;
+    color: #fff;
+}
+  
+.heartbeat-equipment, .thermostat-equipment, .breathalyzer-equipment {
+    width: 100%;
+    min-height: 640px;
+  
+    display: flex;
+    flex-direction: row;
+}
+  
+.equipment__content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+    padding: 32px 64px;
+}
+  
+.equipment__list {
+    list-style: none;
+  
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+.equipment__list li {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+  
+    min-width: 210px;
+}
+  
+.equipment__icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 30px;
+    border-radius: 100%;
+    background-color: var(--primary-color);
+}
+  
+.equipment__icon img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+  
+.equipment__list p {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--plus-jakarta-sans);
+    display: block;
+    margin-bottom: 30px; 
+    color: var(--secondary-color);
+}
+  
+.equipment_image {
+    flex: 1;
+  
+    position: relative;
+    padding: 32px 64px;
+  
+    background-color: var(--color-white);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+  
+.equipment_image img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+}
+  
+  /* Arrows */
+.equipment__arrow {
+    position: absolute;
+    z-index: 1;
+}
+  
+.equipment__arrow img {
+    object-fit: contain;
+}
+  
+.equipment__arrow-left {
+    left: -2.5px;
+    top: 12%;
+}
+  
+.equipment__arrow-left img,.equipment__arrow-top img {
+    width: auto;
+    height: 100%;
+}
+  
+.equipment__arrow-top {
+    top: -10.5px;
+    left: 12%;
+}
+  
+.equipment__arrow-bottom {
+    bottom: -6.5px;
+    right: 12%;
+}
+  
+.equipment__arrow-bottom img, .equipment__arrow-right img {
+    width: 100%;
+    height: auto;
+}
+  
+.equipment__arrow-right {
+    right: -2.5px;
+    bottom: 12%;
+}
