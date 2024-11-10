@@ -14,7 +14,7 @@
 }
 
 .intro-image img{
-    width: 120%;
+    width: 100%;
     height: 100%;
     object-fit: contain;
 }
