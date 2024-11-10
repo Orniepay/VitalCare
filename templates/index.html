@@ -3,10 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h1>Yoloo</h1>
+    <link rel="icon" type="image/png" href="assets/heart-rate.png"/>
+    <title>VitalsCare: Remote Patient Monitoring System</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
+    <header>
+    <link rel="stylesheet" href="/templates/css/sections/header.css">
+        <nav class="header__nav">
+            <div class="header__logo">
+                <h4>VitalsCare</h4>
+                <div class="header__logo-overlay"></div>
+            </div>
+
+            <ul class="header__menu">
+                <li>
+                    <a href="#login">Log In</a>
+                </li>
+                <li>
+                    <a href="#equipment">Equipment</a>
+                </li>
+                <li>
+                    <a href="#dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#about-us">About Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro" data-aos="fade-up" data-aos-delay="800">
+        <link rel="stylesheet" href="/templates/css/sections/intro.css">
+        
+        <div class="intro-image" data-aos="zoom-in" data-aos-delay="800">
+            <!-- Image placeholder -->
+            <!-- <img src="/templates/assets/" alt="project_image">  -->
+            <div class="intro-image__overlay"></div>
+        </div>
     
+        <div class="intro-content" data-aos="fade-right" data-aos-delay="800">
+          <div class="intro-content-info" data-aos="fade-up" data-aos-delay="800">
+            <h1>Concerned about your health? Let us help you with that!</h1>
+            <p>Test your heartbeat, temperature, and alcohol level at our website to get the quickest and most accurate result.</p>
+          </div>
+    
+          <div class="intro-content__testimonial" data-aos="fade-in" data-aos-delay="800">
+            <div class="intro-content__customer flex-center" data-aos="flip-left" data-aos-delay="800">
+              <h4>69,420<span>+</span></h4>
+              <p>Happy Customers</p>
+            </div>
+    
+            <div class="intro-content__review" data-aos="fade-left" data-aos-delay="800">
+              <img src="/templates/assets/kris.png" alt="user" />
+              <p>I was lucky to realize my health condition thanks to this website!</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+    <section class="equipment" id="equipment">
+        <!-- Equipment Section -->
+        <section class="heartbeat-equipment">
+          <div class = "equipment__content"
+          data-aos="fade-right">
+            <p class="equip__subtitle">Equipments</p>
+            <h3 class = "equip__title"> Heartbeat Sensor</h3>
+            <p class="equip__description">Check your heartbeat at the tip of your finger</p>
+      
+            <ul class="equipment__list">
+              <li>
+                <div class="equipment__icon
+                flex-center">
+                  <img src="assets/check.svg"
+                  alt="check"/> 
+                </div>
+                <p>Turn on the device</p>
+              </li>
+      
+              <li>
+                <div class="equipment__icon
+                flex-center">
+                  <img src="assets/check.svg"
+                  alt="check"/> 
+                </div>
+                <p>Pinch the sensor with your thumb and index finger</p>
+              </li>
+      
+              <li>
+                <div class="equipment__icon
+                flex-center">
+                  <img src="assets/check.svg"
+                  alt="check"/> 
+                </div>
+                <p>Get the result on our webpage</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="equipment_image
+          flex-center">
+            <img src="/templates/assets/heartbeat.png" alt="heartbeat-1"
+            data-aos="fade-left"/>
+            
+            <div class="equipment__arrow
+            equipment__arrow-left">
+              <img src="/templates/assets/arrow-vertical.svg"
+              alt="arrow-vertical"/>
+            </div>
+      
+            <div class="equipment__arrow
+            equipment__arrow-bottom">
+              <img src="/templates/assets/arrow-horizontal.svg"
+              alt="arrow-horizontal"/>
+            </div>
+          </div>
+        </section>
+    
+        <section class="thermostat-equipment">
+          <div class="equipment_image
+          flex-center">
+            <img src="/templates/assets/thermostat.png" alt="thermostat"
+            data-aos="fade-right"/>
+            
+            <div class="equipment__arrow
+            equipment__arrow-top">
+              <img src="/templates/assets/arrow-horizontal.svg"
+              alt="arrow-horizontal"/>
+            </div>
+      
+            <div class="equipment__arrow
+            equipment__arrow-right">
+              <img src="/templates/assets/arrow-vertical.svg"
+              alt="arrow-vertical"/>
+            </div>
+          </div>
+    
+          <div class = "equipment__content"
+          data-aos="fade-left">
+            <h3 class = "equip__title"> Thermostat </h3>
+            <p class="equip__description">Check your tempatures with our in-build thermostat</p>
+      
+            <ul class="equipment__list">
+              <li>
+                <div class="equipment__icon
+                flex-center">
+                  <img src="assets/check.svg"
+                  alt="check"/> 
+                </div>
+                <p>Turn on the device</p>
+              </li>
+      
+              <li>
+                <div class="equipment__icon
+                flex-center">
+                  <img src="assets/check.svg"
+                  alt="check"/> 
+                </div>
+                <p>Use your armpit to check your body tempature</p>
+              </li>
+      
+              <li>
+                <div class="equipment__icon
+                flex-center">
+                  <img src="assets/check.svg"
+                  alt="check"/> 
+                </div>
+                <p>Check the result on our website!</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="breathalyzer-equipment">
+            <div class = "equipment__content"
+            data-aos="fade-right">
+              <h3 class = "equip__title"> Breathalyzer</h3>
+              <p class="equip__description">Check your alcohol level to see if you're drunk or not</p>
+        
+              <ul class="equipment__list">
+                <li>
+                  <div class="equipment__icon
+                  flex-center">
+                    <img src="assets/check.svg"
+                    alt="check"/> 
+                  </div>
+                  <p>Turn on the device</p>
+                </li>
+        
+                <li>
+                  <div class="equipment__icon
+                  flex-center">
+                    <img src="assets/check.svg"
+                    alt="check"/> 
+                  </div>
+                  <p>Breath through our breathalyzer device</p>
+                </li>
+        
+                <li>
+                  <div class="equipment__icon
+                  flex-center">
+                    <img src="assets/check.svg"
+                    alt="check"/> 
+                  </div>
+                  <p>Get the result on our webpage</p>
+                </li>
+              </ul>
+            </div>
+        
+            <div class="equipment_image
+            flex-center">
+              <img src="/templates/assets/breathalyzer.png" alt="heartbeat-1"
+              data-aos="fade-left"/>
+              
+              <div class="equipment__arrow
+              equipment__arrow-left">
+                <img src="/templates/assets/arrow-vertical.svg"
+                alt="arrow-vertical"/>
+              </div>
+        
+              <div class="equipment__arrow
+              equipment__arrow-bottom">
+                <img src="/templates/assets/arrow-horizontal.svg"
+                alt="arrow-horizontal"/>
+              </div>
+            </div>
+        </section>
+    </section>
+
+    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
+
+
 </html>
