@@ -42,7 +42,7 @@ void calculate_BAC(int sensor_value)
   }
   else
   {
-    float BAC = 0.08 + (sensor_value - 400) * 0.0001;
+    float BAC = 0.08 + (sensorValue - 400) * 0.0001;
     Serial.print("BAC: ");
     Serial.print(BAC, 3);
     Serial.println("%");
