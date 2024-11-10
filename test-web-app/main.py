@@ -14,8 +14,23 @@ def index():
 
 @app.route('/turn_on')
 def turn_on():
-    # arduino.write(b'a')  # Send 'a' to turn on the LED (red)
-    return "<p>LED turned ON to red. <a href='/'>Go back</a></p>"
+    return render_template_string('''
+        <h1>LED turned on to efwwe</h1>
+        <p><a href="/">Go back</a></p>
+        <p><span id="arduino-data1">Waiting for data...</span></p>
+
+        <script>
+            function fetchArduinoData() {
+                fetch('/get_arduino_data1')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('arduino-data1').innerText = data;
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+            setInterval(fetchArduinoData, 2000);
+        </script>
+    ''')
 
 @app.route('/turn_off')
 def turn_off():
@@ -44,6 +59,13 @@ def get_arduino_data():
     if arduino.in_waiting > 0:
         line = arduino.readline().decode('utf-8').strip()
         print("BPM:", line)
+        return line
+    
+@app.route('/get_arduino_data1')
+def get_arduino_data1():
+    if arduino.in_waiting > 0:
+        line = arduino.readline().decode('utf-8').strip()
+        print(line)
         return line
 
 if __name__ == '__main__':
