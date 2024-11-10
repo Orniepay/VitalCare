@@ -23,12 +23,11 @@
   
       font-weight: 700;
       font-size: 24px;
-      text-transform: uppercase;
-      font-family: var(--playfair-display);
+      font-family: var(--plus-jakarta-sans);
       opacity: 0.8;
   }
   
-  .header__menu, .header_menu-mobile{
+  .header__menu{
       padding: 20px;
       flex: 1.236;
       display: flex;
@@ -53,10 +52,4 @@
       width: 24px;
       height: 24px;
       object-fit: contain;
-  }
-  
-  .header__menu-mobile{
-      display: none;
-      gap: 20px;
-      position: relative;
   }

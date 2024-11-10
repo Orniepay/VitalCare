@@ -1,0 +1,130 @@
+.intro{
+    display: flex;
+    min-height: calc(100vh - 74px);
+    overflow: hidden;
+}
+
+.intro-image{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    z-index: 5;
+}
+
+.intro-image img{
+    width: 120%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.intro-image__overlay{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+.intro-image h2{
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+     
+    font-family: var(--playfair-display);
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 140px;
+    color: #fff;
+}
+
+.intro-content {
+    flex: 1.22;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .intro-content-info {
+    padding: 64px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .intro-content-info h1 {
+    font-size: 70px;
+    font-weight: 600px;
+    font-family: var(--playfair-display);
+    color: var(--secondary-color);
+  }
+  
+  .intro-content-info p {
+    margin: 32px 0 0 32px;
+  
+    font-family: var(--plus-jakarta-sans);
+    color: var(--secondary-color);
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .intro-content__testimonial {
+    padding: 32px 64px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    background: var(--color-white);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+  }
+
+  .intro-content__customer {
+    flex: 1;
+    gap: 10px;
+  }
+
+  .intro-content__customer h4{
+    font-family: var(--playfair-display);
+    font-weight: 400px;
+    font-size: 62px;
+  }
+
+  .intro-content__customer p{
+    font-family: var(--plus-jarkarta-sans);
+    font-weight: 400px;
+    font-size: 21px;
+    color: var(--secondary-color);
+    opacity: 0.5;
+  }
+
+  .intro-content__review {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding-left: 20px;
+    border-left: 1px solid rgba(2, 2, 2, 0.1);
+    min-width: 200px;
+  }
+  
+  .intro-content__review img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+  }
+  
+  .intro-content__review p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    font-family: var(--plus-jakarta-sans);
+    color: var(--secondary-color);
+    opacity: 0.8;
+    margin: 0;
+    padding-left: 10px;
+}
