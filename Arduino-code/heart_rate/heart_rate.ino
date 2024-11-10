@@ -27,17 +27,17 @@ void calculate_BPM(int sensor_value)
 
 void calculate_BAC(int sensor_value)
 {
-  if(sensorValue < 120) Serial.println("BAC: 0.000%");
-  else if(sensorValue > 120 && sensorValue < 400)
+  if(sensor_value < 90) Serial.println("BAC: 0.000%");
+  else if(sensor_value > 90 && sensor_value < 400)
   {
-    float BAC = ((sensorValue - 120) / 280) * 0.08;
+    float BAC = ((sensor_value - 90) / 310) * 0.08;
     Serial.print("BAC: ");
     Serial.print(BAC, 3);
     Serial.println("%");
   }
   else
   {
-    float BAC = 0.08 + (sensorValue - 400) * 0.0001;
+    float BAC = 0.08 + (sensor_value - 400) * 0.0001;
     Serial.print("BAC: ");
     Serial.print(BAC, 3);
     Serial.println("%");
