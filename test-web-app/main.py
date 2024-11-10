@@ -1,5 +1,5 @@
-from flask import Flask, render_template_string
-import serial
+from flask import Flask, render_template_string # type: ignore
+import serial                                   # type: ignore
 
 app = Flask(__name__)
 arduino = serial.Serial("COM6", 9600)
