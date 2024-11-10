@@ -11,7 +11,9 @@
     <section class="register-section">
         <h2>Register - VitalsCare</h2>
         <form action="/register" method="POST">
-
+            {%if exists %}
+            <p style ="color:red;">You have already registered with this email, please login.</p>
+            {% endif %}
             <label for="first-name">First Name</label>
             <input type="text" id="first-name" name="first_name" placeholder="Enter your first name" required>
         
