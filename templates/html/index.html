@@ -148,115 +148,43 @@
         <link rel="stylesheet" href="/static/css/equipment.css">
         <!-- Equipment Section -->
         <section class="heartbeat-equipment">
-          <div class = "equipment__content"
-          data-aos="slide-right"
-          data-aos-delay="500">
+          <!-- Image on the left -->
+          <div class="equipment_image flex-center" data-aos="fade-left">
+            <img src="/static/images/heart-beat.png" alt="heartbeat-1"/>
+            
+            <div class="equipment__arrow equipment__arrow-right">
+              <img src="/static/images/arrow-vertical.svg" alt="arrow-vertical"/>
+            </div>
+            
+            <div class="equipment__arrow equipment__arrow-bottom">
+              <img src="/static/images/arrow-horizontal.svg" alt="arrow-horizontal"/>
+            </div>
+          </div>
+
+          <!-- Content on the right -->
+          <div class="equipment__content" data-aos="fade-right">
             <p class="equip__subtitle">Equipments</p>
-            <h3 class = "equip__title"> Heartbeat Sensor</h3>
+            <h3 class="equip__title">Heartbeat Sensor</h3>
             <p class="equip__description">Check your heartbeat at the tip of your finger</p>
-      
+        
             <ul class="equipment__list">
               <li>
-                <div class="equipment__icon
-                flex-center">
-                  <img src="/static/images/check.svg"
-                  alt="check"/> 
+                <div class="equipment__icon flex-center">
+                  <img src="/static/images/check.svg" alt="check"/> 
                 </div>
                 <p>Turn on the device</p>
               </li>
-      
               <li>
-                <div class="equipment__icon
-                flex-center">
-                  <img src="/static/images/check.svg"
-                  alt="check"/> 
+                <div class="equipment__icon flex-center">
+                  <img src="/static/images/check.svg" alt="check"/> 
                 </div>
                 <p>Pinch the sensor with your thumb and index finger</p>
               </li>
-      
               <li>
-                <div class="equipment__icon
-                flex-center">
-                  <img src="/static/images/check.svg"
-                  alt="check"/> 
+                <div class="equipment__icon flex-center">
+                  <img src="/static/images/check.svg" alt="check"/> 
                 </div>
                 <p>Get the result on our webpage</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="equipment_image
-          flex-center">
-            <img src="/static/images/heart-beat.png" alt="heartbeat-1"
-            data-aos="slide-left"
-            data-aos-delay="500"/>
-            
-            <div class="equipment__arrow
-            equipment__arrow-left">
-              <img src="/static/images/arrow-vertical.svg"
-              alt="arrow-vertical"/>
-            </div>
-      
-            <div class="equipment__arrow
-            equipment__arrow-bottom">
-              <img src="/static/images/arrow-horizontal.svg"
-              alt="arrow-horizontal"/>
-            </div>
-          </div>
-        </section>
-    
-        <section class="thermostat-equipment">
-          <div class="equipment_image
-          flex-center">
-            <img src="/static/images/temperature.png" alt="thermostat"
-            data-aos="slide-right"
-            data-aos-delay="500"/>
-            
-            <div class="equipment__arrow
-            equipment__arrow-top">
-              <img src="/static/images/arrow-horizontal.svg"
-              alt="arrow-horizontal"/>
-            </div>
-      
-            <div class="equipment__arrow
-            equipment__arrow-right">
-              <img src="/static/images/arrow-vertical.svg"
-              alt="arrow-vertical"/>
-            </div>
-          </div>
-    
-          <div class = "equipment__content"
-          data-aos="slide-left"
-          data-aos-delay="500">
-            <h3 class = "equip__title"> Thermostat </h3>
-            <p class="equip__description">Check your tempatures with our in-build thermostat</p>
-      
-            <ul class="equipment__list">
-              <li>
-                <div class="equipment__icon
-                flex-center">
-                  <img src="/static/images/check.svg"
-                  alt="check"/> 
-                </div>
-                <p>Turn on the device</p>
-              </li>
-      
-              <li>
-                <div class="equipment__icon
-                flex-center">
-                  <img src="/static/images/check.svg"
-                  alt="check"/> 
-                </div>
-                <p>Use your armpit to check your body tempature</p>
-              </li>
-      
-              <li>
-                <div class="equipment__icon
-                flex-center">
-                  <img src="/static/images/check.svg"
-                  alt="check"/> 
-                </div>
-                <p>Check the result on our website!</p>
               </li>
             </ul>
           </div>
@@ -318,6 +246,72 @@
               </div>
             </div>
         </section>
+    </section>
+
+    <section class="number-readings" id="readings">
+      <link rel="stylesheet" href="/static/css/popular.css">
+      <h2 class="sensor-readings__title" data-aos="flip-up">Live Readings</h2>
+      <section class="sensor-readings__catalogue" data-aos="fade-right">
+          <article class="sensor-readings__card">
+              <div class="sensor-readings__card-number">75</div>
+              <p class="sensor-readings__card-text">BPM (Beats Per Minutes)</p>
+          </article>
+          
+          <article class="sensor-readings__card active-card" data-aos="fade-left">
+              <div class="sensor-readings__card-number">107</div>
+              <p class="sensor-readings__card-text">BAC (Blood Alcohol Content)</p>
+          </article>
+      </section>
+    </section>
+    
+    <section class="about-us" id="about-us">
+      <link rel="stylesheet" href="/static/css/about.css">
+      <div class="about-us__image">
+          <div class="about-us__image-slide2">
+              <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="/static/images/breathalyzer-device.png" style="width:100%">
+              </div>
+              
+              <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="/static/images/temperature.png" style="width:100%">
+              </div>
+              
+              <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="/static/images/heart-rate.png" style="width:100%">
+              </div>
+          </div>
+            
+          <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              slides[slideIndex-1].style.display = "block";  
+              setTimeout(showSlides, 3000); // Change image every 2 seconds
+            }
+          </script>
+
+        <div class="about-us__image-slide3">
+        </div>
+      </div>
+       
+      <div class="about-us__content" data-aos="fade-left">
+        <p class="sushi__subtitle">About us / 私たちに関しては</p>
+        <h3 class="sushi__title"> Our mission is to bring Japanese flavor to you.</h3>
+        <p class="sushi__description">We will continue to provide the experience of Omotenashi, 
+          the Japanese mindset of hospitality, with our shopping and dining for our customers.
+        </p>
+      </div>
     </section>
 
     <script>
