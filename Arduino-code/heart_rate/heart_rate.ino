@@ -6,9 +6,14 @@ void setup() {
 
 void loop()
 {
-  int sensorValue = analogRead(A0); // read analog input pin 0
-  calculate_BPM(sensorValue);
-  calculate_BAC(sensorValue);
+  int sensor_value = analogRead(A0); // read analog input pin 0
+  if(Serial.available() > 0)
+  {
+    byte incoming = Serial.read();
+    if(incoming == "a") calculate_BAC(sensor_value);
+    else if(incoming == "b") calculate_BPM(sensor_value);
+  }
+  
   delay(2500);
 }
 
@@ -27,17 +32,17 @@ void calculate_BPM(int sensor_value)
 
 void calculate_BAC(int sensor_value)
 {
-  if(sensorValue < 120) Serial.println("BAC: 0.000%");
-  else if(sensorValue > 120 && sensorValue < 400)
+  if(sensor_value < 120) Serial.println("BAC: 0.000%");
+  else if(sensor_value > 120 && sensor_value < 400)
   {
-    float BAC = ((sensorValue - 120) / 280) * 0.08;
+    float BAC = ((sensor_value - 120) / 280) * 0.08;
     Serial.print("BAC: ");
     Serial.print(BAC, 3);
     Serial.println("%");
   }
   else
   {
-    float BAC = 0.08 + (sensorValue - 400) * 0.0001;
+    float BAC = 0.08 + (sensor_value - 400) * 0.0001;
     Serial.print("BAC: ");
     Serial.print(BAC, 3);
     Serial.println("%");
