@@ -1,4 +1,6 @@
+<div align="center">
 # VitalCare
+</div>
 
 <!-- PROJECT LOGO -->
 <br />
