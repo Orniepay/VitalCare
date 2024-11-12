@@ -15,6 +15,14 @@ void loop()
   calculate_BPM(sensor_value);
   calculate_BAC(sensor_value);
   calculate_temperature(sensor_value);
+  int sensor_value = analogRead(A0); // read analog input pin 0
+  if(Serial.available() > 0)
+  {
+    byte incoming = Serial.read();
+    if(incoming == "a") calculate_BAC(sensor_value);
+    else if(incoming == "b") calculate_BPM(sensor_value);
+  }
+  
   delay(2500);
 }
 

@@ -5,8 +5,11 @@ from flask_bcrypt import Bcrypt # type: ignore
 from pymongo import MongoClient # type: ignore
 import secrets
 import hashlib
+import secrets
+import hashlib
 
 mongo_client = MongoClient("mongo")
+db = mongo_client["vitals_care"]
 db = mongo_client["vitals_care"]
 users_collection = db["users"]
 
