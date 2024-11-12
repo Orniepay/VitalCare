@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 style="font-size: 550px">VitalCare</h1>
+  <h1>VitalCare</h1>
 </div>
 
 <!-- PROJECT LOGO -->
